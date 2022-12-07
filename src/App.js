@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
+  const [open, setOpen] = React.useState(false)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={() => setOpen(true)}>Click me</button>
+      {open && (
+        <div onClick={() => setOpen(false)}>
+          <svg height="200"></svg>
+          <img width="200" src="https://24warez.ru/uploads/posts/060917/573516/4.jpg"></img>
+      </div>
+      )}
+      
     </div>
   );
 }
